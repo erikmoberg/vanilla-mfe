@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <script src="dist/startup.js" type="module"></script>
+    <script src="site2/startup.js" type="module"></script>
+    <link rel="icon" href="src/images/favicon.svg">
+    <title>Knowledge Hub</title>
+    <style>
+        :root {
+            --accent: #da4526;
+            --accent-alt: #7200c7;
+            --light: rgba(235, 235, 235, .6);
+            --dark: #16181d;
+            --dark-lighter: #282c34;
+            --border-radius: 0.5rem;
+            --content-width: 60rem;
+        }
+        * {
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            color: var(--dark);
+        }
+
+        main {
+            width: var(--content-width);
+            max-width: calc(100% - 1rem);
+            padding: 1rem 0;
+            min-height: calc(100vh - 12rem);
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark);
+            overflow: hidden;
+        }
+
+        header h1 a {
+            margin: 0;
+            color: var(--accent);
+            font-size: 5rem;
+            text-decoration: none;
+            max-width: var(--content-width);
+            display: inline-block;
+
+            background: -webkit-linear-gradient(-70deg, var(--accent-alt) 0%, var(--accent) 100%);
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: rgba(0,0,0,0);
+            -webkit-box-decoration-break: clone;
+        }
+
+        header h2 {
+            font-size: 2rem;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            max-width: var(--content-width);
+            display: inline-block;
+            color: var(--light);
+        }
+
+        nav {
+            width: 100%;
+            background-color: var(--dark-lighter);
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav a, nav a:visited {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 100rem;
+            outline: 3px solid var(--accent);
+            margin: 0 1rem;
+            white-space: nowrap;
+            transition: outline-color 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            background: -webkit-linear-gradient(-70deg, var(--accent-alt) 0%, var(--accent) 100%);
+            outline-color: transparent;
+            text-decoration: none;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            background-color: var(--dark-lighter);
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 2rem 0;
+            color: var(--light);
+        }
+
+        footer a, footer a:visited {
+            color: var(--light);
+        }
+
+        .inline-cart-area {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+        @media (max-width: 800px) {
+          nav a {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0.5rem;
+          }
+          nav {
+            display: block;
+          }
+        }
+
+        @media (max-width: 600px) {
+          header h1 a {
+            font-size: 3rem;
+          }
+          header h2 {
+            font-size: 1.5rem;
+          }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">The Knowledge Hub</a></h1>
+        <h2>Knowledge is power, France is bacon</h2>
+    </header>
+    <div class="inline-cart-area">
+        <inline-cart></inline-cart>
+    </div>
+    <nav>
+        <a href="/home">Products</a>
+        <a href="/cart">Cart</a>
+    </nav>
+    <main>
+    </main>
+
+    <footer>
+        <p>Fork us on GitHub: <a href="https://github.com/erikmoberg/vanilla-mfe">Vanilla Microfrontend</a></p>
+    </footer>
+</body>
+
+</html>
